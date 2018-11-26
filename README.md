@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -43,7 +42,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-=======
 # Redux_Todo_List
 A repository for Tutorial Redux Todo List by Cuauhtlahuac
->>>>>>> 0fdb53a8858dd80b123e98907aae7bf64608cb0c
+
+- Cloned in work
