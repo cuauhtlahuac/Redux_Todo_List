@@ -1,4 +1,4 @@
-#REDUX NOTES
+##REDUX NOTES
 
 From https://learn.freecodecamp.org/front-end-libraries/redux
 
