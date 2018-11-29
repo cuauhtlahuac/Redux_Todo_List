@@ -58,6 +58,7 @@ const store = Redux.createStore(
 } `
 ***
 ### Redux: Dispatch an Action Event
+- DISPATCH: dispatch the action to Redux Store. Recall action creators and object with a type property. Then the method dispatches an action object to the Redux store.
 
 `const store = Redux.createStore(
   (state = {login: false}) => state
