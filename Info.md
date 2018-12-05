@@ -116,3 +116,5 @@ const store = Redux.createStore(
 
 
 Note: 
+* Error: Unexpected character '​' ... Fixed with copie paste all the code from zero;
+* Error: Does not finded a redux module, fixed with npm install --save redux
