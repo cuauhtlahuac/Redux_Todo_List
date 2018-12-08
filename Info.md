@@ -245,7 +245,65 @@ From [ https://learn.freecodecamp.org/front-end-libraries/redux ] freeCode
       store.dispatch(addNoteText('Hello!'));
       console.log(store.getState());
 ***
+### MIDDLEWARE
+ **Use Middleware to Handle Asynchronous Actions (Redux Thunk middleware).**.
+- Use If you need to call asynchronous endpoints. To include, pass it as an argument and a second optional parameter to the createStore(). like: "const store = Redux.createStore(
+  asyncDataReducer,
+  Redux.applyMiddleware(ReduxThunk.default)
+);"
+- Quote of origin source: "To include Redux Thunk middleware, you pass it as an argument to Redux.applyMiddleware(). This statement is then provided as a second optional parameter to the createStore() function. Take a look at the code at the bottom of the editor to see this. Then, to create an asynchronous action, you return a function in the action creator that takes dispatch as an argument. Within this function, you can dispatch actions and perform asynchronous requests."
+***
+### COUNTER WITH REDUX
+** I created a Redux counter from scratch
 
+        const INCREMENT = 'INCREMENT'; // define a constant for increment action types
+        const DECREMENT = 'DECREMENT'; // define a constant for decrement action types
+
+        const counterReducer = (state = 0, action)=>{
+          switch(action.type){
+            case INCREMENT:
+            return state +1;
+            case DECREMENT:
+            return state -1;
+            default:
+            return state; 
+          }
+        }; // define the counter reducer which will increment or decrement the state based on the action it receives
+
+        const incAction = ()=>{
+          return {type: INCREMENT};
+        }; // define an action creator for incrementing
+
+        const decAction = ()=>{
+          return {type: DECREMENT};
+        }; // define an action creator for decrementing
+
+        const store = Redux.createStore(counterReducer); // define the Redux store here, passing in your reducers
+        
+***
+- NEVER MUTATE STATE: **You shouldn't mutate redux state..check this doc:** https://wecodetheweb.com/2016/02/12/immutable-javascript-using-es6-and-beyond/
+**example Below**
+
+        const immutableReducer = (state = [0,1,2,3,4,5], action) => {
+          switch(action.type) {
+            case 'REMOVE_ITEM':
+              // don't mutate state here or the tests will fail
+              let newArray = [...state]
+              let newState = newArray.splice(action.index,1);
+              return newArray;
+            default:
+              return state;
+          }
+        };
+
+        const removeItem = (index) => {
+          return {
+            type: 'REMOVE_ITEM',
+            index
+          }
+        }
+
+        const store = Redux.createStore(immutableReducer);
 
 ***
 ***
